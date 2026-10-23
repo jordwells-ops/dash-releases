@@ -1,7 +1,7 @@
 {
-  "version": "0.1.0-pilot.4",
+  "version": "0.1.0-beta.1",
   "hardware": "esp32-s3-lcd-2.8c-nontouch",
-  "url": "https://raw.githubusercontent.com/jordwells-ops/dash-releases/main/dash-nontouch-0.1.0-pilot.4.bin",
-  "sha256": "6d3beb98d5ce3e2aeadd4ed4b0cdab388d688f82a391b5b01ada3ee95abee2f2",
-  "notes": "Validated customer OTA update flow for DASH beta"
+  "url": "https://raw.githubusercontent.com/jordwells-ops/dash-releases/main/dash-nontouch-0.1.0-beta.1.bin",
+  "sha256": "bda7655f5b716fbd604468e92a452a4f8081928bb04db5a04a93c2059d201216",
+  "notes": "First DASH beta release; simplified mobile settings interface"
 }
