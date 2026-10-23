@@ -1,7 +1,7 @@
 {
-  "version": "0.1.0-beta.1",
+  "version": "0.1.0-beta.5",
   "hardware": "esp32-s3-lcd-2.8c-nontouch",
-  "url": "https://raw.githubusercontent.com/jordwells-ops/dash-releases/main/dash-nontouch-0.1.0-beta.1.bin",
-  "sha256": "bda7655f5b716fbd604468e92a452a4f8081928bb04db5a04a93c2059d201216",
-  "notes": "First DASH beta release; simplified mobile settings interface"
+  "url": "https://raw.githubusercontent.com/jordwells-ops/dash-releases/main/dash-nontouch-0.1.0-beta.5.bin",
+  "sha256": "969ca4a10aa9cc6be65282801b9eeba216a5803e7b08492bf4478a61d799c097",
+  "notes": "First DASH beta release; simplified mobile settings interface and semantic update channels"
 }
