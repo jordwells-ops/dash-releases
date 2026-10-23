@@ -1,7 +1,7 @@
 {
-  "version": "0.1.0-pilot.2",
+  "version": "0.1.0-pilot.3",
   "hardware": "esp32-s3-lcd-2.8c-nontouch",
-  "url": "https://raw.githubusercontent.com/jordwells-ops/dash-releases/main/dash-nontouch-0.1.0-pilot.2.bin",
-  "sha256": "08ee3362f0bb8d9b6ce1e9a050be5667f218c2f4e362e559257d80b6d7b58802",
-  "notes": "OTA update path validation for DASH beta"
+  "url": "https://raw.githubusercontent.com/jordwells-ops/dash-releases/main/dash-nontouch-0.1.0-pilot.3.bin",
+  "sha256": "18b5005f824eaba762063794b9e8550eab0dc5138fc9d65d298f12837471acb2",
+  "notes": "Validated OTA update flow for DASH beta"
 }
