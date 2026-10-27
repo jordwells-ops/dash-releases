@@ -1,7 +1,7 @@
 {
-  "version": "0.1.0-beta.5",
+  "version": "0.1.0-beta.6",
   "hardware": "esp32-s3-lcd-2.8c-nontouch",
-  "url": "https://raw.githubusercontent.com/jordwells-ops/dash-releases/main/dash-nontouch-0.1.0-beta.5.bin",
-  "sha256": "969ca4a10aa9cc6be65282801b9eeba216a5803e7b08492bf4478a61d799c097",
-  "notes": "First DASH beta release; simplified mobile settings interface and semantic update channels"
+  "url": "https://raw.githubusercontent.com/jordwells-ops/dash-releases/main/dash-nontouch-0.1.0-beta.6.bin",
+  "sha256": "5d365eb9101674cc87b152499fc86f10bb1f671729c5a1efa48aea5db5fbfb49",
+  "notes": "Updated DASH and Classic dashboard screens, smoother tachometer and dual-gauge needle motion, restored gauge markers, refined screen navigation, and production telemetry behavior."
 }
