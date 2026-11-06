@@ -1,7 +1,12 @@
 {
-  "version": "0.1.0-beta.6",
+  "version": "0.1.0-beta.12",
   "hardware": "esp32-s3-lcd-2.8c-nontouch",
-  "url": "https://raw.githubusercontent.com/jordwells-ops/dash-releases/main/dash-nontouch-0.1.0-beta.6.bin",
-  "sha256": "5d365eb9101674cc87b152499fc86f10bb1f671729c5a1efa48aea5db5fbfb49",
-  "notes": "Updated DASH and Classic dashboard screens, smoother tachometer and dual-gauge needle motion, restored gauge markers, refined screen navigation, and production telemetry behavior."
+  "sha256": "478d8c5359eb7012865b9165b10083654745dafb28821cdf55116388c947f88f",
+  "notes": "Adds installed and latest firmware versions to the battery screen, automatic display standby while charging, and background version checks while idle. Non-touch DASH only.",
+  "size": 2399536,
+  "url": "https://raw.githubusercontent.com/jordwells-ops/dash-releases/cf8a0db0b16daf30d7ab8aae70ef1b613eb72d5d/dash-nontouch-0.1.0-beta.12.bin",
+  "approved": true,
+  "release_tag": "firmware-nontouch-v0.1.0-beta.12",
+  "release_url": "https://github.com/jordwells-ops/dash-releases/releases/tag/firmware-nontouch-v0.1.0-beta.12",
+  "approved_at": "2026-11-06T20:00:18Z"
 }
