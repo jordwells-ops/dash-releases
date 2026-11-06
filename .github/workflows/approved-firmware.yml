@@ -1,0 +1,51 @@
+name: Approved DASH firmware feed
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/firmware_feed.py', 'tests/test_firmware_feed.py', '.github/workflows/approved-firmware.yml']
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Published firmware-nontouch-vVERSION tag (assets must already be uploaded)'
+        type: string
+        required: true
+      dry_run:
+        description: 'Validate without changing the approved device/website feed'
+        type: boolean
+        default: true
+permissions:
+  contents: read
+concurrency:
+  group: approved-dash-nontouch-firmware
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -B -m unittest discover -s tests -p 'test_firmware_feed.py' -v
+  promote:
+    needs: test
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'firmware-nontouch-v')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Test release validation
+        run: python3 -B -m unittest discover -s tests -p 'test_firmware_feed.py' -v
+      - name: Validate and promote the approved firmware
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FIRMWARE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          args=()
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          python3 -B scripts/firmware_feed.py --tag "$FIRMWARE_TAG" "${args[@]}"
