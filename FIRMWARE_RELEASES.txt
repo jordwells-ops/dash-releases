@@ -1,0 +1,50 @@
+APPROVED DASH FIRMWARE RELEASES
+
+One approved feed powers both device Check for Update and the website:
+https://raw.githubusercontent.com/jordwells-ops/dash-releases/main/manifest.json
+
+PUBLISHING AN APPROVED NON-TOUCH BUILD
+1. Finish hardware, game/telemetry, OTA, settings-retention and recovery tests.
+   Sign off the exact binary and its compiled release version. Do not promote
+   a dev build merely because it compiles or has been flashed successfully.
+2. In the private Project WHEEL checkout, package that tested build:
+   python3 tools/package_dash_ota.py --approved --version 0.1.0-beta.12 --base-url https://raw.githubusercontent.com/jordwells-ops/dash-releases/main --output dist/approved-beta12 --notes "Tested release notes"
+   This rejects development versions and a version that differs from the
+   compiled image. The example version is not a release authorization.
+3. Create a DRAFT GitHub release in jordwells-ops/dash-releases:
+   Tag: firmware-nontouch-v0.1.0-beta.12
+   Assets: dash-nontouch-0.1.0-beta.12.bin and firmware-release.json
+   Include release notes/compatibility and mark a beta as a pre-release.
+4. Upload both assets completely. Publish only after release approval.
+   Publishing the correctly named release triggers Approved DASH firmware feed.
+5. Check the Actions result. The job validates approval, hardware, embedded
+   ESP32-S3 version, asset URL/name/size, checksum and monotonic version order.
+   It stages the image, verifies the public immutable image URL, then publishes
+   manifest.json LAST. The previous feed remains intact on validation failure.
+6. Verify the website version/download/checksum and a device update from the
+   previous approved build. Never alter a released binary under the same version.
+
+No personal token is required in repository secrets: Actions uses its scoped
+GITHUB_TOKEN with contents:write. Branch policies must permit that workflow to
+push main. Windows releases and other hardware cannot promote this feed.
+The workflow checks out trusted main, never executes release assets, serializes
+promotions and refuses downgrades or changed bytes for an existing version.
+
+EXISTING DEVICES AND CHANNELS
+The current root manifest is the legacy non-touch feed. Its URL and compatible
+manifest fields are retained, so installed devices do not need a firmware
+change for this wiring. The browser downloads raw.githubusercontent.com image
+URLs (CORS-compatible), not GitHub release-asset redirects.
+DASH Touch and ORBIT are NOT compatible with this image/feed. Add separately
+tested hardware-specific feeds before offering updates for those devices.
+
+For installed 0.1.0-beta.11-dev.5 devices, use a later beta iteration such as
+0.1.0-beta.12 (or a stable release). Older installed version comparators do not
+distinguish the -dev suffix from the same numbered beta.
+
+VALIDATION WITHOUT PUBLISHING FIRMWARE
+Pushes affecting the workflow/script/tests run the validation tests only.
+To retry an already-published release, run the workflow manually with its tag.
+Manual dry_run defaults to true: it validates without changing the feed.
+Unapproved, draft, development and wrong-hardware releases are rejected.
+The workflow does not turn a local test package into an approved release.
