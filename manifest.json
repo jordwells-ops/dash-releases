@@ -1,12 +1,12 @@
 {
-  "version": "0.1.0-beta.12",
+  "version": "0.1.0-beta.13",
   "hardware": "esp32-s3-lcd-2.8c-nontouch",
-  "sha256": "478d8c5359eb7012865b9165b10083654745dafb28821cdf55116388c947f88f",
-  "notes": "Adds installed and latest firmware versions to the battery screen, automatic display standby while charging, and background version checks while idle. Non-touch DASH only.",
-  "size": 2399536,
-  "url": "https://raw.githubusercontent.com/jordwells-ops/dash-releases/cf8a0db0b16daf30d7ab8aae70ef1b613eb72d5d/dash-nontouch-0.1.0-beta.12.bin",
+  "sha256": "46dbe1078b062a6ef1e2f76ddff28cba8bc6a4b365cd4e96d2b5af49c203a391",
+  "notes": "The mobile Screens picker now uses tappable dashboard thumbnails. Blue rings show which screens are in rotation; dimmed thumbnails are hidden. Saving keeps your existing screen order.",
+  "size": 2613536,
+  "url": "https://raw.githubusercontent.com/jordwells-ops/dash-releases/ea3b6a21a2b3e1ad6295f109d9e5a8be39928ede/dash-nontouch-0.1.0-beta.13.bin",
   "approved": true,
-  "release_tag": "firmware-nontouch-v0.1.0-beta.12",
-  "release_url": "https://github.com/jordwells-ops/dash-releases/releases/tag/firmware-nontouch-v0.1.0-beta.12",
-  "approved_at": "2026-11-06T20:00:18Z"
+  "release_tag": "firmware-nontouch-v0.1.0-beta.13",
+  "release_url": "https://github.com/jordwells-ops/dash-releases/releases/tag/firmware-nontouch-v0.1.0-beta.13",
+  "approved_at": "2026-11-07T01:53:46Z"
 }
